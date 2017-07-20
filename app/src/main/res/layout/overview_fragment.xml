@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cdcdcdcd">
+    android:background="#4646">
 
-    <ListView
-        android:id="@+id/lv_machine"
+    <TextView
+        android:id="@+id/tv_sample"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:text="Sample"/>
 
 </LinearLayout>

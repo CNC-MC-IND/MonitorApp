@@ -1,5 +1,9 @@
 package kr.ac.kmu.ncs.cnc_mc_monitor.core;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 /**
  * Created by NCS-KSW on 2017-07-20.
  */
@@ -43,4 +47,10 @@ public class Constants {
     public static final String DB_WORKLOAD = "workload";
 
 
+    /**
+     * Bitmap Factory
+     */
+    public static Bitmap drawableToBitmap(Resources resources, int id){
+        return BitmapFactory.decodeResource(resources, id);
+    }
 }

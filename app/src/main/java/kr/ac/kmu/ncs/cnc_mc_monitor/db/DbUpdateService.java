@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
  * Created by NCS-KSW on 2017-07-20.
  */
 public class DbUpdateService extends Service {
+    private DbHelper helper;
 
     @Nullable
     @Override

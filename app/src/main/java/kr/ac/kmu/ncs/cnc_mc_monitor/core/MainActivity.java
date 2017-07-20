@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 // Start a service that periodically updates the database
 
 
+                // Print ListView Activity
                 startActivity(new Intent(getBaseContext(), ListActivity.class));
             }
         });

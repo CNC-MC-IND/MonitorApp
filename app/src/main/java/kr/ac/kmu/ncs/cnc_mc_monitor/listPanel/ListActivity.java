@@ -22,6 +22,7 @@ import java.util.List;
 
 import kr.ac.kmu.ncs.cnc_mc_monitor.R;
 import kr.ac.kmu.ncs.cnc_mc_monitor.core.Constants;
+import kr.ac.kmu.ncs.cnc_mc_monitor.db.DbHelper;
 import kr.ac.kmu.ncs.cnc_mc_monitor.detailActivity.DetailActivity;
 
 /**
@@ -29,6 +30,7 @@ import kr.ac.kmu.ncs.cnc_mc_monitor.detailActivity.DetailActivity;
  */
 public class ListActivity  extends Activity{
 
+    private DbHelper helper;
     private List<ListItem> mListItems;
 
     private ListView lvMachine;
@@ -42,7 +44,11 @@ public class ListActivity  extends Activity{
     }
 
     private void init(){
+        this.helper = new DbHelper(getBaseContext());
+
         this.mListItems = new ArrayList<>();
+        this.mListItems.add(new ListItem((short)0xa2, Constants.drawableToBitmap(getResources(), R.drawable.android_logo)));
+
         this.lvMachine = (ListView)findViewById(R.id.lv_machine);
         this.lvMachine.setAdapter(new ListAdapter());
         this.lvMachine.setOnItemClickListener(new ListViewItemClicked());
@@ -87,13 +93,13 @@ public class ListActivity  extends Activity{
                     view = inflater.inflate(R.layout.list_item, parent, false);
                 }
 
-                // init elements
+                // init element
                 ImageView imgThumnail = (ImageView)view.findViewById(R.id.img_thumnail);
                 TextView tvTitle = (TextView)view.findViewById(R.id.tv_title);
                 ProgressBar pbarWorkload = (ProgressBar)view.findViewById(R.id.pbar_workload);
                 TextView tvWorkload = (TextView)view.findViewById(R.id.tv_workload);
 
-                // set to elements
+                // set to an element
                 imgThumnail.setImageBitmap(inflatedItem.getThumnail());
                 tvTitle.setText("#" + inflatedItem.getMachineID());
                 /***
