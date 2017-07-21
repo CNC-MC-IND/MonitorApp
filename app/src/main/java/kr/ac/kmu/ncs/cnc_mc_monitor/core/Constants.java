@@ -28,6 +28,7 @@ public class Constants {
      "safety_door": 0,
      "depletion": 1,
      "workload": 41
+     "timestamp": 1500621879
      }
      */
 
@@ -45,6 +46,7 @@ public class Constants {
     public static final String DB_SAFETY_DOOR = "safety_door";
     public static final String DB_DEPLETION = "depletion";
     public static final String DB_WORKLOAD = "workload";
+    public static final String DB_TIMESTAMP = "timestamp";
 
 
     /**

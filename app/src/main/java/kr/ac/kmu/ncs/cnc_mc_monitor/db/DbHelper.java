@@ -43,7 +43,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 Constants.DB_SPINDLE + " TEXT, " +
                 Constants.DB_SAFETY_DOOR + " TEXT, " +
                 Constants.DB_DEPLETION + " TEXT, " +
-                Constants.DB_WORKLOAD + " TEXT" +
+                Constants.DB_WORKLOAD + " TEXT, " +
+                Constants.DB_TIMESTAMP + " DATETIME" +
                 ");";
         db.execSQL(query);
     }
@@ -53,7 +54,7 @@ public class DbHelper extends SQLiteOpenHelper {
                                  String pressure_air_main, String pressure_oil_hydraulic,
                                  String servo_cut, String servo_transfer,
                                  String spindle, String safety_door,
-                                 String depletion, String workload) {
+                                 String depletion, String workload, String timestamp) {
         SQLiteDatabase db = getWritableDatabase();
 
         try {
@@ -68,7 +69,8 @@ public class DbHelper extends SQLiteOpenHelper {
                     "'" + spindle + "', " +
                     "'" + safety_door + "', " +
                     "'" + depletion + "', " +
-                    "'" + workload + "'" +
+                    "'" + workload + "', " +
+                    "'" + timestamp + "'" +
                     ");");
         } catch (SQLiteConstraintException ex) {
             db.close();

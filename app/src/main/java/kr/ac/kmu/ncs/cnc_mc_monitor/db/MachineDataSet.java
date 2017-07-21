@@ -1,5 +1,7 @@
 package kr.ac.kmu.ncs.cnc_mc_monitor.db;
 
+import java.sql.Date;
+
 /**
  * Created by NCS-KSW on 2017-07-20.
  */
@@ -15,10 +17,11 @@ public class MachineDataSet {
     private byte safety_door;
     private byte depletion;
     private short workload;
+    private Date timestamp;
 
     private MachineDataSet(){}
 
-    public MachineDataSet(short id, byte lubricant_machine, byte lubricant_saw, byte pressure_air_main, byte pressure_oil_hydraulic, byte servo_cut, byte servo_transfer, byte spindle, byte safety_door, byte depletion, short workload) {
+    public MachineDataSet(short id, byte lubricant_machine, byte lubricant_saw, byte pressure_air_main, byte pressure_oil_hydraulic, byte servo_cut, byte servo_transfer, byte spindle, byte safety_door, byte depletion, short workload, Date timestamp) {
         this.id = id;
         this.lubricant_machine = lubricant_machine;
         this.lubricant_saw = lubricant_saw;
@@ -30,9 +33,10 @@ public class MachineDataSet {
         this.safety_door = safety_door;
         this.depletion = depletion;
         this.workload = workload;
+        this.timestamp = timestamp;
     }
 
-    public void update(short id, byte lubricant_machine, byte lubricant_saw, byte pressure_air_main, byte pressure_oil_hydraulic, byte servo_cut, byte servo_transfer, byte spindle, byte safety_door, byte depletion, short workload) {
+    public void update(short id, byte lubricant_machine, byte lubricant_saw, byte pressure_air_main, byte pressure_oil_hydraulic, byte servo_cut, byte servo_transfer, byte spindle, byte safety_door, byte depletion, short workload, Date timestamp) {
         this.id = id;
         this.lubricant_machine = lubricant_machine;
         this.lubricant_saw = lubricant_saw;
@@ -44,6 +48,7 @@ public class MachineDataSet {
         this.safety_door = safety_door;
         this.depletion = depletion;
         this.workload = workload;
+        this.timestamp = timestamp;
     }
 
     public short getId() {
@@ -132,5 +137,13 @@ public class MachineDataSet {
 
     public void setWorkload(short workload) {
         this.workload = workload;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 }
