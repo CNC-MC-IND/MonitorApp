@@ -25,7 +25,7 @@ public class Constants {
      "servo_cut": 0, // 절단 서보 에러
      "servo_transfer": 1, //이송 서보 에러
      "spindle": 1, //스핀들 이상 에러
-     "safety_door": 0, //안전문 이상
+     "safety_door": 0, //안전 문 이상
      "depletion": 1, // 소제 부족
      "workload": 41 // 작업 량 (몇 개를 가공했는지)
      "timestamp": 1500621879 // 유닉스 타임
