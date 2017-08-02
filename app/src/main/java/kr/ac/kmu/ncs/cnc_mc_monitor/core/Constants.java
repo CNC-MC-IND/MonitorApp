@@ -17,18 +17,18 @@ public class Constants {
     /**
      * Protocol
      {
-     "id": 17834,
-     "lubricant_machine": 1,
-     "lubricant_saw": 1,
-     "pressure_air_main": 1,
-     "pressure_oil_hydraulic": 1,
-     "servo_cut": 0,
-     "servo_transfer": 1,
-     "spindle": 1,
-     "safety_door": 0,
-     "depletion": 1,
-     "workload": 41
-     "timestamp": 1500621879
+     "id": 17834, //장치 고유 값
+     "lubricant_machine": 1, // 장비 윤활유 부족
+     "lubricant_saw": 1, //톱날 윤활유 부족
+     "pressure_air_main": 1, //메인 공기압 부족
+     "pressure_oil_hydraulic": 1, //유압유 압력 부족
+     "servo_cut": 0, // 절단 서보 에러
+     "servo_transfer": 1, //이송 서보 에러
+     "spindle": 1, //스핀들 이상 에러
+     "safety_door": 0, //안전문 이상
+     "depletion": 1, // 소제 부족
+     "workload": 41 // 작업량 (몇 개를 가공했는지)
+     "timestamp": 1500621879 // 유닉스타임
      }
      */
 
