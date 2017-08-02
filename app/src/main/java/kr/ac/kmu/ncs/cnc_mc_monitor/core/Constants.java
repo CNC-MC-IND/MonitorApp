@@ -27,7 +27,7 @@ public class Constants {
      "spindle": 1, //스핀들 이상 에러
      "safety_door": 0, //안전문 이상
      "depletion": 1, // 소제 부족
-     "workload": 41 // 작업량 (몇 개를 가공했는지)
+     "workload": 41 // 작업 량 (몇 개를 가공했는지)
      "timestamp": 1500621879 // 유닉스 타임
      }
      */
