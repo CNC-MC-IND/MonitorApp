@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CNC_MC_Monitor.iml" filepath="$PROJECT_DIR$/CNC_MC_Monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MonitorApp.iml" filepath="$PROJECT_DIR$/MonitorApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
