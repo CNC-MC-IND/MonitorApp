@@ -103,7 +103,7 @@ public class DbUpdateService extends Service {
             Boolean result = false;
 
             try {
-                URL url = new URL(urlStr + "/request_renewed_data");
+                URL url = new URL(urlStr + "/data/renewed_data");
                 conn = (HttpURLConnection)url.openConnection();
 
                 if (conn != null) {

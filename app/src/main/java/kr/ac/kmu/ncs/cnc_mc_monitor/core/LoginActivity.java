@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
             Boolean result = false;
 
             try {
-                URL url = new URL(urlStr + "/authenticate");
+                URL url = new URL(urlStr + "/account/authenticate");
                 conn = (HttpURLConnection)url.openConnection();
 
                 JSONObject json = new JSONObject();
@@ -195,7 +195,7 @@ public class LoginActivity extends AppCompatActivity {
             Boolean result = false;
 
             try {
-                URL url = new URL(urlStr + "/me");
+                URL url = new URL(urlStr + "/account/me");
                 conn = (HttpURLConnection)url.openConnection();
 
                 if (conn != null) {

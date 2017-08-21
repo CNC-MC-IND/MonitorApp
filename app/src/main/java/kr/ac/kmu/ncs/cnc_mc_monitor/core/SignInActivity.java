@@ -117,7 +117,7 @@ public class SignInActivity extends AppCompatActivity {
             String body = json.toString();
 
             try {
-                URL url = new URL(urlStr + "/signin");
+                URL url = new URL(urlStr + "/account/signin");
                 conn = (HttpURLConnection)url.openConnection();
 
                 if (conn != null) {
