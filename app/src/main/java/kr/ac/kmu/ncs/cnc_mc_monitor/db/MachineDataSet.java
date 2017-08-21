@@ -1,27 +1,29 @@
 package kr.ac.kmu.ncs.cnc_mc_monitor.db;
 
-import java.sql.Date;
+import android.os.Parcel;
+
+import java.io.Serializable;
 
 /**
  * Created by NCS-KSW on 2017-07-20.
  */
-public class MachineDataSet {
-    private short id;
-    private byte lubricant_machine;
-    private byte lubricant_saw;
-    private byte pressure_air_main;
-    private byte pressure_oil_hydraulic;
-    private byte servo_cut;
-    private byte servo_transfer;
-    private byte spindle;
-    private byte safety_door;
-    private byte depletion;
-    private short workload;
-    private Date timestamp;
+public class MachineDataSet implements Serializable{
+    private int id;
+    private boolean lubricant_machine;
+    private boolean lubricant_saw;
+    private boolean pressure_air_main;
+    private boolean pressure_oil_hydraulic;
+    private boolean servo_cut;
+    private boolean servo_transfer;
+    private boolean spindle;
+    private boolean safety_door;
+    private boolean depletion;
+    private long workload;
+    private int timestamp;
 
     private MachineDataSet(){}
 
-    public MachineDataSet(short id, byte lubricant_machine, byte lubricant_saw, byte pressure_air_main, byte pressure_oil_hydraulic, byte servo_cut, byte servo_transfer, byte spindle, byte safety_door, byte depletion, short workload, Date timestamp) {
+    public MachineDataSet(int id, boolean lubricant_machine, boolean lubricant_saw, boolean pressure_air_main, boolean pressure_oil_hydraulic, boolean servo_cut, boolean servo_transfer, boolean spindle, boolean safety_door, boolean depletion, long workload, int timestamp) {
         this.id = id;
         this.lubricant_machine = lubricant_machine;
         this.lubricant_saw = lubricant_saw;
@@ -36,7 +38,34 @@ public class MachineDataSet {
         this.timestamp = timestamp;
     }
 
-    public void update(short id, byte lubricant_machine, byte lubricant_saw, byte pressure_air_main, byte pressure_oil_hydraulic, byte servo_cut, byte servo_transfer, byte spindle, byte safety_door, byte depletion, short workload, Date timestamp) {
+    protected MachineDataSet(Parcel in) {
+        id = in.readInt();
+        lubricant_machine = in.readByte() != 0;
+        lubricant_saw = in.readByte() != 0;
+        pressure_air_main = in.readByte() != 0;
+        pressure_oil_hydraulic = in.readByte() != 0;
+        servo_cut = in.readByte() != 0;
+        servo_transfer = in.readByte() != 0;
+        spindle = in.readByte() != 0;
+        safety_door = in.readByte() != 0;
+        depletion = in.readByte() != 0;
+        workload = in.readLong();
+        timestamp = in.readInt();
+    }
+/*
+    public static final Creator<MachineDataSet> CREATOR = new Creator<MachineDataSet>() {
+        @Override
+        public MachineDataSet createFromParcel(Parcel in) {
+            return new MachineDataSet(in);
+        }
+
+        @Override
+        public MachineDataSet[] newArray(int size) {
+            return new MachineDataSet[size];
+        }
+    };
+*/
+    public void update(int id, boolean lubricant_machine, boolean lubricant_saw, boolean pressure_air_main, boolean pressure_oil_hydraulic, boolean servo_cut, boolean servo_transfer, boolean spindle, boolean safety_door, boolean depletion, long workload, int timestamp) {
         this.id = id;
         this.lubricant_machine = lubricant_machine;
         this.lubricant_saw = lubricant_saw;
@@ -51,99 +80,120 @@ public class MachineDataSet {
         this.timestamp = timestamp;
     }
 
-    public short getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(short id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public byte getLubricant_machine() {
+    public boolean getLubricant_machine() {
         return lubricant_machine;
     }
 
-    public void setLubricant_machine(byte lubricant_machine) {
+    public void setLubricant_machine(boolean lubricant_machine) {
         this.lubricant_machine = lubricant_machine;
     }
 
-    public byte getLubricant_saw() {
+    public boolean getLubricant_saw() {
         return lubricant_saw;
     }
 
-    public void setLubricant_saw(byte lubricant_saw) {
+    public void setLubricant_saw(boolean lubricant_saw) {
         this.lubricant_saw = lubricant_saw;
     }
 
-    public byte getPressure_air_main() {
+    public boolean getPressure_air_main() {
         return pressure_air_main;
     }
 
-    public void setPressure_air_main(byte pressure_air_main) {
+    public void setPressure_air_main(boolean pressure_air_main) {
         this.pressure_air_main = pressure_air_main;
     }
 
-    public byte getPressure_oil_hydraulic() {
+    public boolean getPressure_oil_hydraulic() {
         return pressure_oil_hydraulic;
     }
 
-    public void setPressure_oil_hydraulic(byte pressure_oil_hydraulic) {
+    public void setPressure_oil_hydraulic(boolean pressure_oil_hydraulic) {
         this.pressure_oil_hydraulic = pressure_oil_hydraulic;
     }
 
-    public byte getServo_cut() {
+    public boolean getServo_cut() {
         return servo_cut;
     }
 
-    public void setServo_cut(byte servo_cut) {
+    public void setServo_cut(boolean servo_cut) {
         this.servo_cut = servo_cut;
     }
 
-    public byte getServo_transfer() {
+    public boolean getServo_transfer() {
         return servo_transfer;
     }
 
-    public void setServo_transfer(byte servo_transfer) {
+    public void setServo_transfer(boolean servo_transfer) {
         this.servo_transfer = servo_transfer;
     }
 
-    public byte getSpindle() {
+    public boolean getSpindle() {
         return spindle;
     }
 
-    public void setSpindle(byte spindle) {
+    public void setSpindle(boolean spindle) {
         this.spindle = spindle;
     }
 
-    public byte getSafety_door() {
+    public boolean getSafety_door() {
         return safety_door;
     }
 
-    public void setSafety_door(byte safety_door) {
+    public void setSafety_door(boolean safety_door) {
         this.safety_door = safety_door;
     }
 
-    public byte getDepletion() {
+    public boolean getDepletion() {
         return depletion;
     }
 
-    public void setDepletion(byte depletion) {
+    public void setDepletion(boolean depletion) {
         this.depletion = depletion;
     }
 
-    public short getWorkload() {
+    public long getWorkload() {
         return workload;
     }
 
-    public void setWorkload(short workload) {
+    public void setWorkload(long workload) {
         this.workload = workload;
     }
 
-    public Date getTimestamp() {
+    public int getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(int timestamp) {
         this.timestamp = timestamp;
     }
+
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel parcel, int i) {
+//        parcel.writeInt(id);
+//        parcel.writeInt((Boolean) lubricant_machine ? 1: 0);
+//        parcel.writeInt((Boolean) lubricant_saw ? 1: 0);
+//        parcel.writeInt((Boolean) pressure_air_main ? 1: 0);
+//        parcel.writeInt((Boolean) pressure_oil_hydraulic ? 1: 0);
+//        parcel.writeInt((Boolean) servo_cut ? 1: 0);
+//        parcel.writeInt((Boolean) servo_transfer ? 1: 0);
+//        parcel.writeInt((Boolean) spindle ? 1: 0);
+//        parcel.writeInt((Boolean) safety_door ? 1: 0);
+//        parcel.writeInt((Boolean) depletion ? 1: 0);
+//        parcel.writeLong(workload);
+//        parcel.writeInt(timestamp);
+//    }
 }

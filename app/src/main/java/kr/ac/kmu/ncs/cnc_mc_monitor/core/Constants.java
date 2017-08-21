@@ -4,6 +4,8 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import java.util.Date;
+
 /**
  * Created by NCS-KSW on 2017-07-20.
  */
@@ -48,6 +50,24 @@ public class Constants {
     public static final String DB_WORKLOAD = "workload";
     public static final String DB_TIMESTAMP = "timestamp";
 
+    public static String ID = "";
+    public static String LUBRICANT_MACHINE = "";
+    public static String LUBRICANT_SAW = "";
+    public static String PRESSURE_AIR_MAIN = "";
+    public static String PRESSURE_OIL_HYDRAULIC = "";
+    public static String SERVO_CUT = "";
+    public static String SERVO_TRANSFER = "";
+    public static String SPINDLE = "";
+    public static String SAFETY_DOOR = "";
+    public static String DEPLETION = "";
+    public static String WORKLOAD ;
+    public static String TIMESTAMP = "";
+
+    public static final int CONN_TIMEOUT = 10000;
+    public static String ORGINIZATION = "";
+    public static String SERVERADDRESS = "";
+    public static String TOKEN = "";
+    public static Date TIME_LASTSEXION = new Date();
 
     /**
      * Bitmap Factory

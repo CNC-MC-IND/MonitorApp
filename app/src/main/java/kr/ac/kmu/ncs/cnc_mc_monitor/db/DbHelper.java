@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import kr.ac.kmu.ncs.cnc_mc_monitor.core.Constants;
 
@@ -57,8 +58,12 @@ public class DbHelper extends SQLiteOpenHelper {
                                  String depletion, String workload, String timestamp) {
         SQLiteDatabase db = getWritableDatabase();
 
+        Log.d(getClass().getSimpleName(), id);
+        Log.d(getClass().getSimpleName(), timestamp);
+        Log.d(getClass().getSimpleName(), workload);
+
         try {
-            db.execSQL("INSERT INTO " + machineTable + " VALUES(" +
+            db.execSQL("INSERT OR REPLACE INTO " + machineTable + " VALUES(" +
                     "'" + id + "', " +
                     "'" + lubricant_machine + "', " +
                     "'" + lubricant_saw + "', " +
